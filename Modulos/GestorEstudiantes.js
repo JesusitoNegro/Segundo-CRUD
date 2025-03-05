@@ -113,7 +113,18 @@ class GestorEstudiantes {
     rankingEstudiantes() {
         return this.calcularPromedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
     }
+
+    cantidadAprobadosReprobados(umbral = 60) {
+        return this.estudiantes.reduce((resultado, est) => {
+            const promedio = est.calcularPromedio();
+            if (promedio >= umbral) {
+                resultado.aprobados++;
+            } else {
+                resultado.reprobados++;
+            }
+            return resultado;
+        }, { aprobados: 0, reprobados: 0 });
+    }
 }
 
 export default GestorEstudiantes;
-
