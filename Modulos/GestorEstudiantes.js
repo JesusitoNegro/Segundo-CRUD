@@ -35,8 +35,20 @@ class GestorEstudiantes {
     filtrarPorPromedio(umbral) {
         return this.calcularPromedioPorEstudiante().filter(est => est.promedio >= umbral);
     }
+
+    aprobadosYReprobadosPorMateria(materia, umbral = 60) {
+        return this.estudiantes.reduce((resultado, est) => {
+            const calificacion = est.calificaciones[materia];
+            if (calificacion !== undefined) {
+                if (calificacion >= umbral) {
+                    resultado.aprobados.push({ nombre: est.nombre, calificacion, nivel: est.nivel });
+                } else {
+                    resultado.reprobados.push({ nombre: est.nombre, calificacion, nivel: est.nivel });
+                }
+            }
+            return resultado;
+        }, { aprobados: [], reprobados: [] });
+    }
 }
 
 export default GestorEstudiantes;
-
-
