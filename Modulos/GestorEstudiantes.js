@@ -56,12 +56,24 @@ class GestorEstudiantes {
     }
 
     calcularPromedioPorArea() {
-        return this.estudiantes.reduce((acc, est) => {
+        const promedios = this.estudiantes.reduce((acc, est) => {
             if (!acc[est.nivel]) {
                 acc[est.nivel] = { total: 0, cantidad: 0 };
             }
             acc[est.nivel].total += est.calcularPromedio();
             acc[est.nivel].cantidad++;
+            return acc;
+        }, {});
+        
+        return Object.keys(promedios).reduce((res, area) => {
+            res[area] = promedios[area].total / promedios[area].cantidad;
+            return res;
+        }, {});
+    }
+
+    distribucionPorArea() {
+        return this.estudiantes.reduce((acc, est) => {
+            acc[est.nivel] = (acc[est.nivel] || 0) + 1;
             return acc;
         }, {});
     }
