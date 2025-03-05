@@ -19,6 +19,11 @@ class GestorEstudiantes {
             calificaciones: est.calificaciones
         }));
     }
+
+    buscarEstudiante(criterio) {
+        return this.estudiantes.find(est => est.id === criterio || est.nombre.toLowerCase() === criterio.toLowerCase()) || "Estudiante no encontrado";
+    }
 }
 
 export default GestorEstudiantes;
+
