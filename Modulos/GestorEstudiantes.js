@@ -31,6 +31,10 @@ class GestorEstudiantes {
             nivel: est.nivel
         }));
     }
+
+    filtrarPorPromedio(umbral) {
+        return this.calcularPromedioPorEstudiante().filter(est => est.promedio >= umbral);
+    }
 }
 
 export default GestorEstudiantes;
