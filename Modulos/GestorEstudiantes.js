@@ -109,6 +109,11 @@ class GestorEstudiantes {
             peores: estudiantesOrdenados.slice(-2)
         };
     }
+
+    rankingEstudiantes() {
+        return this.calcularPromedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
+    }
 }
 
 export default GestorEstudiantes;
+
