@@ -49,10 +49,21 @@ class GestorEstudiantes {
             return resultado;
         }, { aprobados: [], reprobados: [] });
     }
-    
+
     calcularPromedioGeneral() {
         const totalPromedios = this.estudiantes.reduce((acc, est) => acc + est.calcularPromedio(), 0);
         return this.estudiantes.length ? totalPromedios / this.estudiantes.length : 0;
+    }
+
+    calcularPromedioPorArea() {
+        return this.estudiantes.reduce((acc, est) => {
+            if (!acc[est.nivel]) {
+                acc[est.nivel] = { total: 0, cantidad: 0 };
+            }
+            acc[est.nivel].total += est.calcularPromedio();
+            acc[est.nivel].cantidad++;
+            return acc;
+        }, {});
     }
 }
 
