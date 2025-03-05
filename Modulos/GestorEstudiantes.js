@@ -101,6 +101,14 @@ class GestorEstudiantes {
             return resultado;
         }, {});
     }
+
+    mejoresYPeoresEstudiantes() {
+        const estudiantesOrdenados = this.calcularPromedioPorEstudiante().sort((a, b) => b.promedio - a.promedio);
+        return {
+            mejores: estudiantesOrdenados.slice(0, 2),
+            peores: estudiantesOrdenados.slice(-2)
+        };
+    }
 }
 
 export default GestorEstudiantes;
