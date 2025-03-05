@@ -23,7 +23,16 @@ class GestorEstudiantes {
     buscarEstudiante(criterio) {
         return this.estudiantes.find(est => est.id === criterio || est.nombre.toLowerCase() === criterio.toLowerCase()) || "Estudiante no encontrado";
     }
+
+    calcularPromedioPorEstudiante() {
+        return this.estudiantes.map(est => ({
+            nombre: est.nombre,
+            promedio: est.calcularPromedio(),
+            nivel: est.nivel
+        }));
+    }
 }
 
 export default GestorEstudiantes;
+
 

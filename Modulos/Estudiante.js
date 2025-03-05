@@ -6,7 +6,12 @@ class Estudiante {
         this.nombre = nombre;
         this.edad = edad;
         this.nivel = nivel;
-        this.calificaciones = calificaciones; // Nuevo atributo
+        this.calificaciones = calificaciones;
+    }
+
+    calcularPromedio() {
+        const valores = Object.values(this.calificaciones);
+        return valores.length ? valores.reduce((acc, nota) => acc + nota, 0) / valores.length : 0;
     }
 }
 
