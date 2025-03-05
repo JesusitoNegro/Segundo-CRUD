@@ -125,6 +125,15 @@ class GestorEstudiantes {
             return resultado;
         }, { aprobados: 0, reprobados: 0 });
     }
+
+    reporteRendimientoAcademico() {
+        return {
+            totalEstudiantes: this.estudiantes.length,
+            promedioGeneralGrupo: this.calcularPromedioGeneral(),
+            mejoresEstudiantes: this.filtrarPorPromedio(85),
+            peoresEstudiantes: this.filtrarPorPromedio(60)
+        };
+    }
 }
 
 export default GestorEstudiantes;
