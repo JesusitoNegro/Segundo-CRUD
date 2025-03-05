@@ -77,6 +77,30 @@ class GestorEstudiantes {
             return acc;
         }, {});
     }
+
+    promedioMateriasPorArea() {
+        const materiasPorArea = this.estudiantes.reduce((acc, est) => {
+            if (!acc[est.nivel]) {
+                acc[est.nivel] = {};
+            }
+            Object.keys(est.calificaciones).forEach(materia => {
+                if (!acc[est.nivel][materia]) {
+                    acc[est.nivel][materia] = { total: 0, cantidad: 0 };
+                }
+                acc[est.nivel][materia].total += est.calificaciones[materia];
+                acc[est.nivel][materia].cantidad++;
+            });
+            return acc;
+        }, {});
+        
+        return Object.keys(materiasPorArea).reduce((resultado, area) => {
+            resultado[area] = Object.keys(materiasPorArea[area]).reduce((materiaRes, materia) => {
+                materiaRes[materia] = materiasPorArea[area][materia].total / materiasPorArea[area][materia].cantidad;
+                return materiaRes;
+            }, {});
+            return resultado;
+        }, {});
+    }
 }
 
 export default GestorEstudiantes;
