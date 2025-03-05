@@ -49,6 +49,11 @@ class GestorEstudiantes {
             return resultado;
         }, { aprobados: [], reprobados: [] });
     }
+    
+    calcularPromedioGeneral() {
+        const totalPromedios = this.estudiantes.reduce((acc, est) => acc + est.calcularPromedio(), 0);
+        return this.estudiantes.length ? totalPromedios / this.estudiantes.length : 0;
+    }
 }
 
 export default GestorEstudiantes;
