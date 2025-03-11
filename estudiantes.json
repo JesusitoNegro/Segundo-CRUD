@@ -2,7 +2,7 @@
     {
         "nombre": "Juan Pérez",
         "edad": 18,
-        "area": "Informática",
+        "area": "Informatica",
         "calificaciones": {
             "Matematicas": 85,
             "Naturales": 90,
@@ -13,7 +13,7 @@
     {
         "nombre": "Ana Gómez",
         "edad": 19,
-        "area": "Gestión",
+        "area": "Gestion",
         "calificaciones": {
             "Matematicas": 92,
             "Naturales": 85,
@@ -24,7 +24,7 @@
     {
         "nombre": "Carlos Ruiz",
         "edad": 20,
-        "area": "Electrónica",
+        "area": "Electronica",
         "calificaciones": {
             "Matematicas": 40,
             "Naturales": 50,
@@ -35,7 +35,7 @@
     {
         "nombre": "Elena Torres",
         "edad": 18,
-        "area": "Informática",
+        "area": "Informatica",
         "calificaciones": {
             "Matematicas": 88,
             "Naturales": 92,
@@ -46,7 +46,7 @@
     {
         "nombre": "Pedro Ramírez",
         "edad": 21,
-        "area": "Gestión",
+        "area": "Gestion",
         "calificaciones": {
             "Matematicas": 55,
             "Naturales": 52,
@@ -57,7 +57,7 @@
     {
         "nombre": "María López",
         "edad": 19,
-        "area": "Electrónica",
+        "area": "Electronica",
         "calificaciones": {
             "Matematicas": 95,
             "Naturales": 89,
@@ -68,7 +68,7 @@
     {
         "nombre": "Luis Fernández",
         "edad": 20,
-        "area": "Informática",
+        "area": "Informatica",
         "calificaciones": {
             "Matematicas": 78,
             "Naturales": 80,
@@ -79,7 +79,7 @@
     {
         "nombre": "Andrea Castro",
         "edad": 18,
-        "area": "Gestión",
+        "area": "Gestion",
         "calificaciones": {
             "Matematicas": 30,
             "Naturales": 45,
@@ -90,7 +90,7 @@
     {
         "nombre": "José Ortega",
         "edad": 22,
-        "area": "Electrónica",
+        "area": "Electronica",
         "calificaciones": {
             "Matematicas": 67,
             "Naturales": 72,
@@ -101,7 +101,7 @@
     {
         "nombre": "Sofía Morales",
         "edad": 19,
-        "area": "Informática",
+        "area": "Informatica",
         "calificaciones": {
             "Matematicas": 91,
             "Naturales": 89,

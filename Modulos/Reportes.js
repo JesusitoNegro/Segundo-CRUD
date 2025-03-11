@@ -147,6 +147,25 @@ class Reportes {
         console.log("\n📌 Promedio General por Área de Estudio:");
         console.table(resultado);
     }
+
+    filtrarPorArea(area) {
+        // Filtrar los estudiantes que pertenecen al área ingresada
+        const estudiantesFiltrados = this.gestor.estudiantes
+            .filter(est => est.area.toLowerCase() === area.toLowerCase())
+            .map(est => ({
+                Nombre: est.nombre,
+                Edad: est.edad,
+                Área: est.area,
+            }));
+    
+        if (estudiantesFiltrados.length === 0) {
+            console.log(`⚠️ No se encontraron estudiantes en el área de "${area}".`);
+        } else {
+            console.log(`📌 Estudiantes en el área de "${area}":`);
+            console.table(estudiantesFiltrados);
+        }
+    }
+    
     
 
     // ✅ Genera un informe general del rendimiento académico
