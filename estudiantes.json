@@ -1,0 +1,113 @@
+[
+    {
+        "nombre": "Juan Pérez",
+        "edad": 18,
+        "area": "Informática",
+        "calificaciones": {
+            "Matematicas": 85,
+            "Naturales": 90,
+            "Sociales": 78,
+            "Espanol": 88
+        }
+    },
+    {
+        "nombre": "Ana Gómez",
+        "edad": 19,
+        "area": "Gestión",
+        "calificaciones": {
+            "Matematicas": 92,
+            "Naturales": 85,
+            "Sociales": 80,
+            "Espanol": 89
+        }
+    },
+    {
+        "nombre": "Carlos Ruiz",
+        "edad": 20,
+        "area": "Electrónica",
+        "calificaciones": {
+            "Matematicas": 40,
+            "Naturales": 50,
+            "Sociales": 45,
+            "Espanol": 48
+        }
+    },
+    {
+        "nombre": "Elena Torres",
+        "edad": 18,
+        "area": "Informática",
+        "calificaciones": {
+            "Matematicas": 88,
+            "Naturales": 92,
+            "Sociales": 85,
+            "Espanol": 91
+        }
+    },
+    {
+        "nombre": "Pedro Ramírez",
+        "edad": 21,
+        "area": "Gestión",
+        "calificaciones": {
+            "Matematicas": 55,
+            "Naturales": 52,
+            "Sociales": 49,
+            "Espanol": 50
+        }
+    },
+    {
+        "nombre": "María López",
+        "edad": 19,
+        "area": "Electrónica",
+        "calificaciones": {
+            "Matematicas": 95,
+            "Naturales": 89,
+            "Sociales": 92,
+            "Espanol": 94
+        }
+    },
+    {
+        "nombre": "Luis Fernández",
+        "edad": 20,
+        "area": "Informática",
+        "calificaciones": {
+            "Matematicas": 78,
+            "Naturales": 80,
+            "Sociales": 82,
+            "Espanol": 76
+        }
+    },
+    {
+        "nombre": "Andrea Castro",
+        "edad": 18,
+        "area": "Gestión",
+        "calificaciones": {
+            "Matematicas": 30,
+            "Naturales": 45,
+            "Sociales": 35,
+            "Espanol": 40
+        }
+    },
+    {
+        "nombre": "José Ortega",
+        "edad": 22,
+        "area": "Electrónica",
+        "calificaciones": {
+            "Matematicas": 67,
+            "Naturales": 72,
+            "Sociales": 65,
+            "Espanol": 69
+        }
+    },
+    {
+        "nombre": "Sofía Morales",
+        "edad": 19,
+        "area": "Informática",
+        "calificaciones": {
+            "Matematicas": 91,
+            "Naturales": 89,
+            "Sociales": 85,
+            "Espanol": 90
+        }
+    }
+]
+

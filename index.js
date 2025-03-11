@@ -13,16 +13,24 @@ const rl = readline.createInterface({
 function agregarEstudiante() {
     rl.question("Nombre: ", nombre => {
         rl.question("Edad: ", edad => {
-            rl.question("Nivel: ", nivel => {
-                rl.question("Calificaciones (JSON: {materia: nota}): ", calificaciones => {
-                    try {
-                        const calificacionesObj = JSON.parse(calificaciones);
-                        gestor.agregarEstudiante(nombre, parseInt(edad), nivel, calificacionesObj);
-                        console.log("Estudiante agregado.");
-                    } catch (error) {
-                        console.log("Formato incorrecto. Usa JSON válido.");
-                    }
-                    mostrarMenu();
+            rl.question("Área de estudio: ", area => {
+                rl.question("Calificación en Matemáticas: ", matematicas => {
+                    rl.question("Calificación en Naturales: ", naturales => {
+                        rl.question("Calificación en Sociales: ", sociales => {
+                            rl.question("Calificación en Español: ", espanol => {
+                                const calificaciones = {
+                                    Matematicas: parseFloat(matematicas),
+                                    Naturales: parseFloat(naturales),
+                                    Sociales: parseFloat(sociales),
+                                    Espanol: parseFloat(espanol),
+                                };
+
+                                gestor.agregarEstudiante(nombre, parseInt(edad), area, calificaciones);
+                                console.log("✅ Estudiante agregado correctamente.");
+                                mostrarMenu();
+                            });
+                        });
+                    });
                 });
             });
         });
@@ -43,19 +51,27 @@ function mostrarMenu() {
     console.log("2. Listar estudiantes");
     console.log("3. Buscar estudiante");
     console.log("4. Generar reportes");
-    console.log("5. Salir");
+    console.log("5. Actualizar estudiante");
+    console.log("6. Eliminar estudiante");
+    console.log("7. Salir");
 
     rl.question("Seleccione una opción: ", opcion => {
         if (opcion === "1") {
             agregarEstudiante();
         } else if (opcion === "2") {
-            console.log(gestor.listarEstudiantes());
+            console.table(gestor.listarEstudiantes());
             mostrarMenu();
         } else if (opcion === "3") {
             buscarEstudiante();
         } else if (opcion === "4") {
             mostrarMenuReportes();
         } else if (opcion === "5") {
+            rl.question("Ingrese el ID del estudiante a actualizar: ", id => {
+                gestor.actualizarEstudiante(parseInt(id), rl, mostrarMenu); });
+            } else if (opcion === "6") {
+                rl.question("Ingrese el ID del estudiante a eliminar: ", id => {
+                    gestor.eliminarEstudiante(parseInt(id), mostrarMenu);});
+        } else if (opcion === "7") {
             rl.close();
         } else {
             console.log("Opción no válida.");
@@ -63,6 +79,7 @@ function mostrarMenu() {
         }
     });
 }
+
 
 function mostrarMenuReportes() {
     console.log("\n--- Reportes Académicos ---");
@@ -74,43 +91,50 @@ function mostrarMenuReportes() {
     console.log("6. Ranking de estudiantes");
     console.log("7. Cantidad de aprobados y reprobados");
     console.log("8. Reporte de rendimiento académico");
-    console.log("9. Volver al menú principal");
+    console.log("9. Promedio por Área de Estudio");
+    console.log("10. Volver al menú principal");
+  
 
     rl.question("Seleccione una opción: ", opcion => {
         if (opcion === "1") {
-            console.log(reportes.calcularPromedioPorEstudiante());
+            reportes.calcularPromedioPorEstudiante();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "2") {
             rl.question("Ingrese el umbral: ", umbral => {
-                console.log(reportes.filtrarPorPromedio(parseInt(umbral)));
-                mostrarMenuReportes();
+                reportes.filtrarPorPromedio(parseInt(umbral));
+                setTimeout(mostrarMenu, 2000);
             });
         } else if (opcion === "3") {
             rl.question("Ingrese la materia: ", materia => {
-                console.log(reportes.aprobadosYReprobadosPorMateria(materia));
-                mostrarMenuReportes();
+                reportes.aprobadosYReprobadosPorMateria(materia);
+                setTimeout(mostrarMenu, 2000);
             });
         } else if (opcion === "4") {
-            console.log(`Promedio General: ${reportes.calcularPromedioGeneral()}`);
-            mostrarMenuReportes();
+            reportes.calcularPromedioGeneral();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "5") {
-            console.log(reportes.mejoresYPeoresEstudiantes());
-            mostrarMenuReportes();
+            reportes.mejoresYPeoresEstudiantes();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "6") {
-            console.log(reportes.rankingEstudiantes());
-            mostrarMenuReportes();
+            reportes.rankingEstudiantes();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "7") {
-            console.log(reportes.cantidadAprobadosReprobados());
-            mostrarMenuReportes();
+            reportes.cantidadAprobadosReprobados();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "8") {
-            console.log(reportes.reporteRendimientoAcademico());
-            mostrarMenuReportes();
+            reportes.reporteRendimientoAcademico();
+            setTimeout(mostrarMenu, 2000);
         } else if (opcion === "9") {
+            reportes.promedioPorArea();
+            setTimeout(mostrarMenu, 2000);
+        } else if (opcion === "10") {
             mostrarMenu();
         } else {
             console.log("Opción no válida.");
-            mostrarMenuReportes();
+            setTimeout(mostrarMenuReportes, 1500);
         }
     });
 }
 
 mostrarMenu();
+

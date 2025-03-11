@@ -1,11 +1,11 @@
 let studentId = 1;
 
 class Estudiante {
-    constructor(nombre, edad, nivel, calificaciones = {}) {
+    constructor(nombre, edad, area, calificaciones = {}) {
         this.id = studentId++;
         this.nombre = nombre;
         this.edad = edad;
-        this.nivel = nivel;
+        this.area = area;
         this.calificaciones = calificaciones;
     }
 
@@ -16,3 +16,4 @@ class Estudiante {
 }
 
 export default Estudiante;
+
